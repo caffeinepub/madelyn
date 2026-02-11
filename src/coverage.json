@@ -1,0 +1,86 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-11T21:29:08.490Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 4,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "Extend the backend item category model to support a new Girl Scout tins category, and ensure existing query APIs (listItems, filterByCategory, sortBooksByYear) continue to work with the new category.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Add a new \"Tins\" section to the frontend category tabs (including All Items) so users can browse tin items separately.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Update collection querying/state so the app fetches and displays tin items, consistent with how books/patches/uniforms are loaded (including loading/error handling).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useCollectionQueries.ts",
+          "frontend/src/App.tsx",
+          "frontend/src/hooks/useCollectionViewState.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useCollectionQueries.ts",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Update the item add form and item details/card rendering to support tins as a selectable category, including appropriate labels and category styling.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/collection/ItemFormDialog.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/collection/ItemCard.tsx",
+          "frontend/src/components/collection/ItemDetailsDialog.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/collection/ItemFormDialog.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/collection/ItemCard.tsx",
+          "frontend/src/components/collection/ItemDetailsDialog.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/collection/ItemCard.tsx",
+    "frontend/src/components/collection/ItemDetailsDialog.tsx",
+    "frontend/src/components/collection/ItemFormDialog.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useCollectionQueries.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add Tins category browsing and creation in the collection UI",
+  "requirements": [
+    {
+      "id": "REQ-11",
+      "summary": "Add a new Tins category tab and update user-facing category copy to include tins.",
+      "acceptanceCriteria": [
+        "The main category tabs include: All Items, Books, Patches, Uniforms, and Tins.",
+        "When the Tins tab is selected, the list shows only tin items.",
+        "The All Items tab shows tin items with the category badge/label enabled (consistent with existing All Items behavior).",
+        "User-facing copy that lists tracked categories (e.g., the page intro) is updated to mention tins."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a new \"Tins\" tab (trigger + content) and extend selectedCategory state/logic to support 'tins'. Update the page intro copy to mention tins. Wire the Tins tab to render the tins-only list, while All Items continues to show category badges for all categories including tins."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Fetch, load, and display tins data using the same query/state patterns as existing categories (including loading/error handling and search support).",
+      "acceptanceCriteria": [
+        "The frontend data hooks include a tins query (using filterByCategory with the tin category) and expose tins data to the App-level UI.",
+        "The app loading state accounts for the tins query so the UI does not show an empty list while tins are still loading.",
+        "Search filtering works for tin items (search matches against the tin item name/id in a sensible way, consistent with patches/uniforms behavior)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useCollectionQueries.ts",
+          "operation": "modify",
+          "description": "Add a tins query using the existing backend actor call for category filtering (Tin category). Expose `tins` from `useCollectionData()` and include it in combined loading/error state so the UI doesn't render an empty Tins tab while still loading."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Consume `tins` from `useCollectionData()` and ensure tab selection chooses the correct dataset for filtering/sorting. Ensure the shared loading state is passed through to ItemList for the Tins tab as well."
+        },
+        {
+          "path": "frontend/src/hooks/useCollectionViewState.ts",
+          "operation": "modify",
+          "description": "Confirm search behavior includes Tin items sensibly (consistent with Patch/Uniform behavior by matching against item.id), and adjust filtering logic if needed so Tin items are searchable when viewing All Items or the Tins tab."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Support creating and rendering tin items across the add form, item cards, and item details with a distinct Tin label/badge style.",
+      "acceptanceCriteria": [
+        "The Add Item dialog category selector includes \"Tin\".",
+        "Tin items can be created successfully (with optional photo) and then appear in the Tins tab and All Items tab after creation.",
+        "Item cards and the item details dialog display tin items with a \"Tin\" category label/badge and a distinct non-blue/non-purple color treatment consistent with the app theme.",
+        "Form validation requires a non-empty tin name/id input (similar to patches/uniforms behavior)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/collection/ItemFormDialog.tsx",
+          "operation": "modify",
+          "description": "Add \"Tin\" to the category selector and extend form state/submit logic to construct the Tin category and require a non-empty tin name/id. Ensure optional photo upload continues to work via ExternalBlob. Use the selected \"blob-storage\" component capability (ExternalBlob + upload progress) as already integrated; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Extend the form defaultCategory mapping so when the Tins tab is active the Add Item dialog defaults to the Tin category."
+        },
+        {
+          "path": "frontend/src/components/collection/ItemCard.tsx",
+          "operation": "modify",
+          "description": "Add Tin handling in category label/title/subtitle computation and provide a distinct non-blue/non-purple badge color treatment for Tin items. Ensure All Items badges correctly show \"Tin\" when showCategory is enabled."
+        },
+        {
+          "path": "frontend/src/components/collection/ItemDetailsDialog.tsx",
+          "operation": "modify",
+          "description": "Add Tin handling to display a \"Tin\" badge/label with the same distinct color treatment used in cards, and ensure the title/details render sensibly for Tin items."
+        }
+      ]
+    }
+  ]
+}

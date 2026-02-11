@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application component with tabbed navigation for Books/Patches/Uniforms/Tins/All Items, search/sort toolbar, and add item functionality with React Query integration.",
+  "frontend/src/components/branding/AppHeader.tsx": "Header component displaying the Girl Scout collection logo and personalized greeting for Madelyn.",
+  "frontend/src/components/collection/ItemList.tsx": "Reusable list component that renders a grid of item cards with loading states and empty state handling.",
+  "frontend/src/components/collection/ItemCard.tsx": "Card component displaying item summary with photo thumbnail, category badge (including rose-colored Tin badge), and click-to-view-details functionality.",
+  "frontend/src/components/collection/ItemDetailsDialog.tsx": "Modal dialog showing full item details including large photo, category info (with Tin support using rose color), and metadata.",
+  "frontend/src/components/collection/ItemFormDialog.tsx": "Form dialog for adding new items with category-specific fields (Book/Patch/Uniform/Tin), photo upload, validation, and upload progress tracking.",
+  "frontend/src/components/collection/PhotoPicker.tsx": "Image file picker component with preview and ExternalBlob conversion for photo uploads.",
+  "frontend/src/components/collection/EmptyState.tsx": "Empty state component displaying illustration and helpful message when no items exist.",
+  "frontend/src/components/collection/CollectionToolbar.tsx": "Toolbar with search input and sort dropdown for filtering and organizing collection items.",
+  "frontend/src/hooks/useCollectionQueries.ts": "React Query hooks for fetching all items, filtered by category (including tins), and sorted books data from the backend with combined loading/error states.",
+  "frontend/src/hooks/useCollectionMutations.ts": "React Query mutation hook for adding new items with cache invalidation and toast notifications.",
+  "frontend/src/hooks/useCollectionViewState.ts": "Custom hook managing local UI state for search, sort, and client-side filtering logic that works across all categories including tins.",
+  "frontend/src/index.css": "Global styles with Girl Scout-themed OKLCH color system using green as primary color with warm neutrals for light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with Girl Scout color palette, Inter font family, and custom shadows for card elevation.",
+  "frontend/index.html": "HTML entry point with updated title for Madelyn's collection and Inter font preload."
+}

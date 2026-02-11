@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "App to help Madelyn track Girl Scout collections: books (by year and name), patches, uniforms (optionally with photos), and tins.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-add-a-frontend-ui-with-clear-separate-sections-for-books-patches-and-uniforms-plus-an-optional-all-items-view-that-shows-everything-with-a-category-label",
+      "title": "Add a frontend UI with clear separate sections for Books, Patches, and Uniforms, plus an optional 'All Items' view that shows everything with a category label.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-forms-to-add-edit-and-delete-items-in-each-category-with-validation-appropriate-to-the-category-e-g-books-require-name-and-year",
+      "title": "Provide forms to add, edit, and delete items in each category, with validation appropriate to the category (e.g., Books require name and year).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-photo-support-so-a-user-can-attach-at-least-one-photo-to-an-item-book-patch-uniform-and-view-it-in-the-item-details",
+      "title": "Add photo support so a user can attach at least one photo to an item (book/patch/uniform) and view it in the item details.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-collection-browsing-utilities-search-by-name-title-filter-by-category-and-basic-sorting-for-lists-including-books-by-year",
+      "title": "Add collection browsing utilities: search by name/title, filter by category, and basic sorting for lists (including Books by year).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-a-cohesive-creative-visual-theme-suitable-for-a-girl-scout-collection-tracker-avoid-blue-purple-applying-consistent-typography-spacing-and-component-styling-across-all-pages",
+      "title": "Use a cohesive, creative visual theme suitable for a Girl Scout collection tracker (avoid blue/purple), applying consistent typography, spacing, and component styling across all pages.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-personalize-the-app-ui-with-the-name-madelyn-where-appropriate-e-g-header-greeting-without-requiring-any-additional-user-profile-setup",
+      "title": "Personalize the app UI with the name \"Madelyn\" where appropriate (e.g., header greeting), without requiring any additional user profile setup.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-render-a-small-set-of-static-ui-images-logo-empty-state-as-local-frontend-assets-in-frontend-public-assets-generated-and-use-them-in-the-ui",
+      "title": "Generate and render a small set of static UI images (logo/empty-state) as local frontend assets in frontend/public/assets/generated, and use them in the UI.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-tins-section-to-the-frontend-category-tabs-including-all-items-so-users-can-browse-tin-items-separately",
+      "title": "Add a new \"Tins\" section to the frontend category tabs (including All Items) so users can browse tin items separately.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-collection-querying-state-so-the-app-fetches-and-displays-tin-items-consistent-with-how-books-patches-uniforms-are-loaded-including-loading-error-handling",
+      "title": "Update collection querying/state so the app fetches and displays tin items, consistent with how books/patches/uniforms are loaded (including loading/error handling).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-item-add-form-and-item-details-card-rendering-to-support-tins-as-a-selectable-category-including-appropriate-labels-and-category-styling",
+      "title": "Update the item add form and item details/card rendering to support tins as a selectable category, including appropriate labels and category styling.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Track Girl Scout books collection with fields for name and year.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Track collected Girl Scout patches.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Track collected Girl Scout uniforms and accessories.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Create a collection-tracking data model and persistence layer to store Girl Scout items in three categories: Books (tracked by year and name), Patches, and Uniforms (including accessories).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Implement backend APIs for listing and searching the collection, including filtering by category (Books, Patches, Uniforms) and sorting Books by year and then name.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add a new collection section/category to track Girl Scout tins.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Extend the backend item category model to support a new Girl Scout tins category, and ensure existing query APIs (listItems, filterByCategory, sortBooksByYear) continue to work with the new category.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Madelyn",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,66 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-new-tins-section-to-the-frontend-category-tabs-including-all-items-so-users-can-browse-tin-items-separately",
+      "featureTitle": "Add a new \"Tins\" section to the frontend category tabs (including All Items) so users can browse tin items separately.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-collection-querying-state-so-the-app-fetches-and-displays-tin-items-consistent-with-how-books-patches-uniforms-are-loaded-including-loading-error-handling",
+      "featureTitle": "Update collection querying/state so the app fetches and displays tin items, consistent with how books/patches/uniforms are loaded (including loading/error handling).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useCollectionQueries.ts"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-item-add-form-and-item-details-card-rendering-to-support-tins-as-a-selectable-category-including-appropriate-labels-and-category-styling",
+      "featureTitle": "Update the item add form and item details/card rendering to support tins as a selectable category, including appropriate labels and category styling.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/collection/ItemCard.tsx",
+        "frontend/src/components/collection/ItemDetailsDialog.tsx",
+        "frontend/src/components/collection/ItemFormDialog.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

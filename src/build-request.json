@@ -1,0 +1,110 @@
+{
+  "kind": "build_request",
+  "title": "Add a new collection section for Girl Scout tins",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "text": "Extend the backend item category model to support a new Girl Scout tins category, and ensure existing query APIs (listItems, filterByCategory, sortBooksByYear) continue to work with the new category.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2",
+          "msg-6"
+        ],
+        "quotes": [
+          "Can you add a section for girl scout tins"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend Category type includes a new variant for tins (e.g., #Tin) without breaking existing Book/Patch/Uniform variants.",
+        "filterByCategory correctly returns tin items when the caller passes the tin category, and continues to return books/patches/uniforms as before.",
+        "listItems returns items across all categories, including tins.",
+        "sortBooksByYear behavior remains unchanged for books and does not trap when tin items exist."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Add a new \"Tins\" section to the frontend category tabs (including All Items) so users can browse tin items separately.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2",
+          "msg-6"
+        ],
+        "quotes": [
+          "Can you add a section for girl scout tins"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The main category tabs include: All Items, Books, Patches, Uniforms, and Tins.",
+        "When the Tins tab is selected, the list shows only tin items.",
+        "The All Items tab shows tin items with the category badge/label enabled (consistent with existing All Items behavior).",
+        "User-facing copy that lists tracked categories (e.g., the page intro) is updated to mention tins."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Update collection querying/state so the app fetches and displays tin items, consistent with how books/patches/uniforms are loaded (including loading/error handling).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2",
+          "msg-6"
+        ],
+        "quotes": [
+          "Can you add a section for girl scout tins"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The frontend data hooks include a tins query (using filterByCategory with the tin category) and expose tins data to the App-level UI.",
+        "The app loading state accounts for the tins query so the UI does not show an empty list while tins are still loading.",
+        "Search filtering works for tin items (search matches against the tin item name/id in a sensible way, consistent with patches/uniforms behavior)."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Update the item add form and item details/card rendering to support tins as a selectable category, including appropriate labels and category styling.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2",
+          "msg-6"
+        ],
+        "quotes": [
+          "Can you add a section for girl scout tins"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Add Item dialog category selector includes \"Tin\".",
+        "Tin items can be created successfully (with optional photo) and then appear in the Tins tab and All Items tab after creation.",
+        "Item cards and the item details dialog display tin items with a \"Tin\" category label/badge and a distinct non-blue/non-purple color treatment consistent with the app theme.",
+        "Form validation requires a non-empty tin name/id input (similar to patches/uniforms behavior)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor with all logic in backend/main.mo; add migration.mo only if an upgrade requires migrating existing stable state.",
+    "Do not edit files under frontend/src/components/ui or any paths listed as immutable (e.g., frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, frontend/src/main.tsx).",
+    "Use English for all user-facing text."
+  ],
+  "nonGoals": [
+    "Adding new authentication methods beyond Internet Identity.",
+    "Adding real-time updates or chat features.",
+    "Introducing external databases or additional backend services."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}
